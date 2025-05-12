@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZethianBots - Bot Maker with Scroll Animations</title>
+  <style>
+    /* Basisreset en styling */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0e0e0e;
+      color: #f0f0f0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #539bf5;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #bb86fc;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(14,14,14,0.85);
+      border-bottom: 1px solid #222;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    nav .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      color: #539bf5;
+      user-select: none;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+    }
+    nav ul li {
+      cursor: pointer;
+      position: relative;
+    }
+    nav ul li::after {
+      content: '';
+      position: absolute;
+      width: 0; height: 2px;
+      background: #bb86fc;
+      left: 0; bottom: -6px;
+      transition: width 0.3s ease;
+    }
+    nav ul li:hover::after {
+      width: 100%;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: #bb86fc;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      user-select: none;
+    }
+    header p {
+      font-size: 1.3rem;
+      color: #ccc;
+      max-width: 600px;
+      margin-bottom: 40px;
+      user-select: none;
+    }
+    header .btn {
+      padding: 15px 35px;
+      font-size: 1.1rem;
+      color: #121212;
+      background: #bb86fc;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    header .btn:hover {
+      background: #9e6de8;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: #bb86fc;
+      font-weight: 800;
+    }
+    section p {
+      font-size: 1.2rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+    section img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 30px;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(187, 134, 252, 0.4);
+      user-select: none;
+    }
+
+    footer {
+      margin: 50px 0;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+      nav ul {
+        gap: 16px;
+      }
+      section img {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">ZethianBots</div>
+    <ul>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#bots">Bots</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1 class="sr-top">Professional Bot Maker & Automation Expert</h1>
+    <p class="sr-top-delay">Building efficient, reliable, and scalable bots to automate your tasks and power your communities with precision and creativity.</p>
+    <button class="btn sr-top-delay-2" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+  </header>
+
+  <section id="pricing" class="sr-left">
+    <img src="https://via.placeholder.com/400x250?text=Pricing+Plans" alt="Pricing" />
+    <h2>Pricing</h2>
+    <p>
+      We offer flexible pricing plans tailored to your needs, from basic bot setups to fully customized solutions that fit your budget.
+    </p>
+  </section>
+
+  <section id="bots" class="sr-right">
+    <img src="https://imgur.com/a/RD65dXb" alt="Bots Portfolio" />
+    <h2>Bots</h2>
+    <p>
+      Discover our portfolio of bots specializing in moderation, automation, games, and custom workflows to enhance your server functionality.
+    </p>
+  </section>
+
+  <section id="about" class="sr-left">
+    <img src="https://via.placeholder.com/400x250?text=About+Me" alt="About Me" />
+    <h2>About Me</h2>
+    <p>
+      I am passionate about crafting smart, effective bots for communities and businesses. With a focus on usability and performance, I deliver bots that make a real difference.
+    </p>
+  </section>
+
+  <section id="contact" class="sr-right">
+    <h2>Contact Me</h2>
+    <p>
+      Ready to bring your automation ideas to life? Contact me for consultations, custom projects, or collaborations.
+    </p>
+    <a href="mailto:contact@zethianbots.com" style="color:#bb86fc; font-weight:700;">contact@zethianbots.com</a>
+  </section>
+
+  <footer>
+    &copy; 2025 ZethianBots. All rights reserved.
+  </footer>
+
+  <!-- Import ScrollReveal.js from CDN -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    const sr = ScrollReveal({
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-out',
+      reset: false
+    });
+
+    sr.reveal('.sr-top', { origin: 'top', interval: 200 });
+    sr.reveal('.sr-top-delay', { origin: 'top', delay: 200 });
+    sr.reveal('.sr-top-delay-2', { origin: 'top', delay: 400 });
+    sr.reveal('.sr-left', { origin: 'left', interval: 300 });
+    sr.reveal('.sr-right', { origin: 'right', interval: 300 });
+  </script>
+</body>
+</html>
